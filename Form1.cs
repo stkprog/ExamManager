@@ -13,6 +13,8 @@ namespace ExamManager {
             columnSorter = new ListViewColumnSorter();
             examListView.ListViewItemSorter = columnSorter;
 
+            Region = new Region(new Rectangle(0, 0, Width, Height));
+
             Paint += new PaintEventHandler(setFormBackground);
         }
 
@@ -28,8 +30,11 @@ namespace ExamManager {
             string subject = subjectTextbox.Text;
             string grade = gradeTextbox.Text;
 
-            if ((date.Equals("") || subject.Equals("") || grade.Equals(""))) {
-                addEntryLabel.Text = "Fields cannot be empty!";
+            if (date.Equals("")) {
+                addEntryLabel.Text = "Date cannot be empty!";
+            }
+            else if (subject.Equals("")) {
+                addEntryLabel.Text = "Subject cannot be empty!";
             }
             else {
                 string[] row = { "", date, subject, grade };
@@ -124,6 +129,27 @@ namespace ExamManager {
             }
         }
 
+        private void editSelectedEntry_Button_Click(object sender, EventArgs e) {
+            if (examListView.CheckedItems.Count == 0) {
+                editLabel.Text = "None selected!";
+            }
+            else if (examListView.CheckedItems.Count > 1) {
+                editLabel.Text = "Can only edit 1 at a time!";
+            }
+            else {
+                editLabel.Text = "";
+                using (Form2 popup = new Form2(examListView.CheckedItems[0])) {
+                    var form2Result = popup.ShowDialog();
+                    if (form2Result == DialogResult.OK) {
+                        ListViewItem returnedItem = popup.itemToReturn;
+
+                        for (int i = 0; i < 4; i++) {
+                            examListView.CheckedItems[0].SubItems[i].Text = returnedItem.SubItems[i].Text;
+                        }
+                    }
+                }
+            }
+        }
     }
 
 }

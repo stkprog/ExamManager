@@ -42,6 +42,8 @@
             subjectCalculateLabel = new Label();
             removeLabel = new Label();
             addEntryLabel = new Label();
+            editLabel = new Label();
+            editSelectedEntry_Button = new Button();
             SuspendLayout();
             // 
             // addNewEntry_Button
@@ -49,10 +51,10 @@
             addNewEntry_Button.BackColor = Color.Orange;
             addNewEntry_Button.Font = new Font("MS PGothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             addNewEntry_Button.ForeColor = Color.FromArgb(99, 118, 213);
-            addNewEntry_Button.Location = new Point(12, 258);
+            addNewEntry_Button.Location = new Point(12, 346);
             addNewEntry_Button.Name = "addNewEntry_Button";
             addNewEntry_Button.Size = new Size(218, 33);
-            addNewEntry_Button.TabIndex = 6;
+            addNewEntry_Button.TabIndex = 7;
             addNewEntry_Button.Text = "Add a new entry";
             addNewEntry_Button.UseVisualStyleBackColor = false;
             addNewEntry_Button.Click += addNewEntry_Button_Click;
@@ -69,11 +71,11 @@
             examListView.Font = new Font("MS PGothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             examListView.ForeColor = Color.FromArgb(99, 118, 213);
             examListView.GridLines = true;
-            examListView.Location = new Point(12, 309);
+            examListView.Location = new Point(12, 396);
             examListView.Name = "examListView";
             examListView.ShowGroups = false;
             examListView.Size = new Size(574, 309);
-            examListView.TabIndex = 13;
+            examListView.TabIndex = 16;
             examListView.UseCompatibleStateImageBehavior = false;
             examListView.View = View.Details;
             examListView.ColumnClick += examListView_ColumnClick;
@@ -170,10 +172,10 @@
             calculateGrade_Button.BackColor = Color.Orange;
             calculateGrade_Button.Font = new Font("MS PGothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             calculateGrade_Button.ForeColor = Color.FromArgb(99, 118, 213);
-            calculateGrade_Button.Location = new Point(313, 258);
+            calculateGrade_Button.Location = new Point(313, 346);
             calculateGrade_Button.Name = "calculateGrade_Button";
             calculateGrade_Button.Size = new Size(273, 33);
-            calculateGrade_Button.TabIndex = 12;
+            calculateGrade_Button.TabIndex = 15;
             calculateGrade_Button.Text = "Calculate Subject Grade";
             calculateGrade_Button.UseVisualStyleBackColor = false;
             calculateGrade_Button.Click += calculateGrade_Button_Click;
@@ -183,10 +185,10 @@
             calculateResultTextbox.BackColor = Color.FromArgb(255, 234, 149);
             calculateResultTextbox.Font = new Font("MS PGothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             calculateResultTextbox.ForeColor = Color.FromArgb(99, 118, 213);
-            calculateResultTextbox.Location = new Point(314, 169);
+            calculateResultTextbox.Location = new Point(314, 294);
             calculateResultTextbox.Name = "calculateResultTextbox";
             calculateResultTextbox.Size = new Size(271, 25);
-            calculateResultTextbox.TabIndex = 10;
+            calculateResultTextbox.TabIndex = 13;
             // 
             // calculateResultLabel
             // 
@@ -194,20 +196,20 @@
             calculateResultLabel.BackColor = Color.Transparent;
             calculateResultLabel.Font = new Font("MS PGothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             calculateResultLabel.ForeColor = Color.AliceBlue;
-            calculateResultLabel.Location = new Point(315, 235);
+            calculateResultLabel.Location = new Point(315, 324);
             calculateResultLabel.Name = "calculateResultLabel";
             calculateResultLabel.Size = new Size(0, 18);
-            calculateResultLabel.TabIndex = 11;
+            calculateResultLabel.TabIndex = 14;
             // 
             // removeEntry_Button
             // 
             removeEntry_Button.BackColor = Color.Orange;
             removeEntry_Button.Font = new Font("MS PGothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             removeEntry_Button.ForeColor = Color.FromArgb(99, 118, 213);
-            removeEntry_Button.Location = new Point(313, 36);
+            removeEntry_Button.Location = new Point(312, 37);
             removeEntry_Button.Name = "removeEntry_Button";
             removeEntry_Button.Size = new Size(273, 33);
-            removeEntry_Button.TabIndex = 7;
+            removeEntry_Button.TabIndex = 8;
             removeEntry_Button.Text = "Remove selected entries";
             removeEntry_Button.UseVisualStyleBackColor = false;
             removeEntry_Button.Click += removeEntry_Button_Click;
@@ -218,10 +220,10 @@
             subjectCalculateLabel.BackColor = Color.Transparent;
             subjectCalculateLabel.Font = new Font("MS PGothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             subjectCalculateLabel.ForeColor = Color.AliceBlue;
-            subjectCalculateLabel.Location = new Point(314, 146);
+            subjectCalculateLabel.Location = new Point(314, 271);
             subjectCalculateLabel.Name = "subjectCalculateLabel";
             subjectCalculateLabel.Size = new Size(183, 18);
-            subjectCalculateLabel.TabIndex = 9;
+            subjectCalculateLabel.TabIndex = 12;
             subjectCalculateLabel.Text = "Subject to calculate:";
             // 
             // removeLabel
@@ -230,10 +232,10 @@
             removeLabel.BackColor = Color.Transparent;
             removeLabel.Font = new Font("MS PGothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             removeLabel.ForeColor = Color.AliceBlue;
-            removeLabel.Location = new Point(315, 74);
+            removeLabel.Location = new Point(314, 75);
             removeLabel.Name = "removeLabel";
             removeLabel.Size = new Size(0, 18);
-            removeLabel.TabIndex = 8;
+            removeLabel.TabIndex = 9;
             // 
             // addEntryLabel
             // 
@@ -241,17 +243,43 @@
             addEntryLabel.BackColor = Color.Transparent;
             addEntryLabel.Font = new Font("MS PGothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             addEntryLabel.ForeColor = Color.AliceBlue;
-            addEntryLabel.Location = new Point(15, 235);
+            addEntryLabel.Location = new Point(15, 323);
             addEntryLabel.Name = "addEntryLabel";
             addEntryLabel.Size = new Size(0, 18);
-            addEntryLabel.TabIndex = 14;
+            addEntryLabel.TabIndex = 6;
+            // 
+            // editLabel
+            // 
+            editLabel.AutoSize = true;
+            editLabel.BackColor = Color.Transparent;
+            editLabel.Font = new Font("MS PGothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            editLabel.ForeColor = Color.AliceBlue;
+            editLabel.Location = new Point(314, 203);
+            editLabel.Name = "editLabel";
+            editLabel.Size = new Size(0, 18);
+            editLabel.TabIndex = 11;
+            // 
+            // editSelectedEntry_Button
+            // 
+            editSelectedEntry_Button.BackColor = Color.Orange;
+            editSelectedEntry_Button.Font = new Font("MS PGothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            editSelectedEntry_Button.ForeColor = Color.FromArgb(99, 118, 213);
+            editSelectedEntry_Button.Location = new Point(312, 165);
+            editSelectedEntry_Button.Name = "editSelectedEntry_Button";
+            editSelectedEntry_Button.Size = new Size(273, 33);
+            editSelectedEntry_Button.TabIndex = 10;
+            editSelectedEntry_Button.Text = "Edit selected Entry";
+            editSelectedEntry_Button.UseVisualStyleBackColor = false;
+            editSelectedEntry_Button.Click += editSelectedEntry_Button_Click;
             // 
             // myWindow
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(99, 118, 213);
-            ClientSize = new Size(598, 630);
+            ClientSize = new Size(598, 717);
+            Controls.Add(editLabel);
+            Controls.Add(editSelectedEntry_Button);
             Controls.Add(addEntryLabel);
             Controls.Add(removeLabel);
             Controls.Add(removeEntry_Button);
@@ -271,6 +299,7 @@
             MaximizeBox = false;
             MinimumSize = new Size(616, 645);
             Name = "myWindow";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "ExamManager";
             FormClosing += myWindow_FormClosing;
             Load += myWindow_Load;
@@ -299,5 +328,7 @@
         private Label subjectCalculateLabel;
         private Label removeLabel;
         private Label addEntryLabel;
+        private Label editLabel;
+        private Button editSelectedEntry_Button;
     }
 }
