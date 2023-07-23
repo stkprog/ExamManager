@@ -176,7 +176,7 @@
             calculateGrade_Button.Name = "calculateGrade_Button";
             calculateGrade_Button.Size = new Size(273, 33);
             calculateGrade_Button.TabIndex = 15;
-            calculateGrade_Button.Text = "Calculate Subject Grade";
+            calculateGrade_Button.Text = "Calculate subject grade";
             calculateGrade_Button.UseVisualStyleBackColor = false;
             calculateGrade_Button.Click += calculateGrade_Button_Click;
             // 
@@ -268,7 +268,7 @@
             editSelectedEntry_Button.Name = "editSelectedEntry_Button";
             editSelectedEntry_Button.Size = new Size(273, 33);
             editSelectedEntry_Button.TabIndex = 10;
-            editSelectedEntry_Button.Text = "Edit selected Entry";
+            editSelectedEntry_Button.Text = "Edit selected entry";
             editSelectedEntry_Button.UseVisualStyleBackColor = false;
             editSelectedEntry_Button.Click += editSelectedEntry_Button_Click;
             // 

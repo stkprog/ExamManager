@@ -61,7 +61,7 @@ namespace ExamManager {
             string subject = calculateResultTextbox.Text.ToLower();
 
             if (subject.Equals("")) {
-                calculateResultLabel.Text = "No Subject entered!";
+                calculateResultLabel.Text = "No subject entered!";
             }
             else {
                 int rowCount = 0;
