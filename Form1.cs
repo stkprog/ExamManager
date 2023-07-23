@@ -146,6 +146,7 @@ namespace ExamManager {
                         for (int i = 0; i < 4; i++) {
                             examListView.CheckedItems[0].SubItems[i].Text = returnedItem.SubItems[i].Text;
                         }
+                        examListView.CheckedItems[0].Checked = false;
                     }
                 }
             }
